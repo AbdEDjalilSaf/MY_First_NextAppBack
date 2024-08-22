@@ -13,12 +13,11 @@ const Header = () => {
           <Link href="/" className="text-gray-700 hover:text-gray-900">
             Home
           </Link>
-          <Link href="/Profile" className="text-gray-700 hover:text-gray-900">
-            Profile
+          <Link href="/LogIn" className="text-gray-700 hover:text-gray-900">
+            LogIn
           </Link>
           <button
-          className="bg-red-500 text-white text-base px-4 py-2 rounded hover:bg-red-600"
-          onClick={() => alert('Logged out')}>
+          className="bg-red-500 text-white text-base px-4 py-2 rounded hover:bg-red-600">
           Log Out
         </button>
         </nav>

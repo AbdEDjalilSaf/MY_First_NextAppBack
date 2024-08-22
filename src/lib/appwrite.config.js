@@ -1,3 +1,4 @@
+import { cookies } from 'next/headers';
 import {Account, Client, Databases} from 'node-appwrite'
 
 const createAdminClient = async ()=>{
@@ -20,7 +21,32 @@ return {
 
 }
 
-export  { createAdminClient }
+// create session
+const createSessionClient = async (requist)=>{
+
+    const client = new Client();
+
+    client
+        .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
+        .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
+
+const session = requist.cookies.get("custom-session");
+if(session){
+
+    cookies.setSession(session.value);
+
+}
+
+   
+
+return {
+    get account(){
+        return new Account(client);
+    }
+}
+}
+
+export  { createAdminClient, createSessionClient }
 
 
 

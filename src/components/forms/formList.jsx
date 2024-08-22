@@ -10,7 +10,7 @@ export default function Table() {
   ];
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <div className="flex items-center justify-center h-[90vh] bg-gray-100">
       <div className="w-full max-w-7xl p-4 bg-white rounded-lg shadow-lg">
         <h2 className="mb-4 text-2xl font-bold text-center text-gray-800">User Table</h2>
         <div className="overflow-x-auto">
