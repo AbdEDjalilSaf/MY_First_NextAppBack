@@ -1,23 +1,19 @@
-"use client"
 
 // pages/login.js
-import React, { useState } from "react";
+import { Button } from "../ui/button";
+import { SignInWithEmail } from "@/lib/actions/logIn-action";
+
+
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle login logic here
-    console.log({ email, password });
-  };
 
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+
+   return (
+    <div className="flex items-center justify-center min-h-[90vh] bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-800">Login</h2>
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6" action={SignInWithEmail}>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email address
@@ -26,8 +22,6 @@ export default function Login() {
               type="email"
               id="email"
               name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
               className="block w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
@@ -40,19 +34,18 @@ export default function Login() {
               type="password"
               id="password"
               name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               required
               className="block w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
           </div>
           <div>
-            <button
+            <Button
+            variant="outline"
               type="submit"
               className="w-full px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
             >
               Sign in
-            </button>
+            </Button>
           </div>
         </form>
         <p className="text-sm text-center text-gray-600">
@@ -60,5 +53,41 @@ export default function Login() {
         </p>
       </div>
     </div>
+
+
+  // action={signInWithEmail}
+  // action={signUpWithEmail}
+
+    // 	<div>
+		// 	<form >
+		// 		<h1>Login</h1>
+		// 		<input
+		// 			type="email"
+		// 			name="email"
+		// 			placeholder="Email address"
+		// 		/>
+		// 		<input
+		// 			type="password"
+		// 			name="password"
+		// 			placeholder="Password"
+		// 		/>
+		// 		<button type="submit">Login</button>
+		// 	</form>
+
+		// 	<form >
+		// 		<h1>Sign up</h1>
+		// 		<input
+		// 			type="email"
+		// 			name="email"
+		// 			placeholder="Email address"
+		// 		/>
+		// 		<input
+		// 			type="password"
+		// 			name="password"
+		// 			placeholder="Password"
+		// 		/>
+		// 		<button type="submit">Sign up</button>
+		// 	</form>
+		// </div>
   );
 }

@@ -30,7 +30,7 @@ const createSessionClient = async (requist)=>{
         .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
         .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
 
-const session = requist.cookies.get("custom-session");
+const session = requist.cookies.get("custom_session");
 if(session){
 
     cookies.setSession(session.value);
