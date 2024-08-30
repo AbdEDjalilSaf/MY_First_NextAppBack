@@ -22,7 +22,7 @@ return {
 }
 
 // create session
-const createSessionClient = async (requist)=>{
+const createSessionClient = async ()=>{
 
     const client = new Client();
 
@@ -30,14 +30,12 @@ const createSessionClient = async (requist)=>{
         .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
         .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
 
-const session = requist.cookies.get("custom_session");
+const session = cookies.get("custom_session");
 if(session){
 
-    cookies.setSession(session.value);
+    client.setSession(session.value);
 
 }
-
-   
 
 return {
     get account(){
