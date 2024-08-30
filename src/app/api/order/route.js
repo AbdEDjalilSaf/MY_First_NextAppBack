@@ -7,4 +7,4 @@ const { documents: order, total} = await database.listDocuments(
     process.env.NEXT_PUBLIC_COLLECTION_ORDER
 )
     return Response.json({order,total});
-}
+} 
