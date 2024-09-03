@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label"
 import { Form } from "@/components/ui/form"
 import  LogIn  from "@/components/forms/registerLogIn";
-import Tabel from "@/components/forms/formList"
 // import { Moon,Sun } from "lucide-react";
 
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
 {/* <LogIn /> */}
 <div className="flex flex-col">
 <Label htmlFor="email">Your email address</Label>
-<Tabel />
 </div>
 {/* <Form /> */}
     </>
