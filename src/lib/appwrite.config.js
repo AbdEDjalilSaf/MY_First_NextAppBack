@@ -3,9 +3,7 @@ import {Account, Client, Databases} from 'node-appwrite'
 
 const createAdminClient = async ()=>{
 
-const client = new Client();
-
-client
+const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
     .setProject(process.env.NEXT_PUBLIC_PROJECT_ID)
     .setKey(process.env.NEXT_PUBLIC_API_ID);
@@ -19,7 +17,7 @@ return {
     }
 }
 
-}
+};
 
 // create session
 const createSessionClient = async ()=>{
@@ -44,7 +42,7 @@ return {
 }
 }
 
-export  { createAdminClient, createSessionClient }
+export  {createAdminClient,createSessionClient}
 
 
 

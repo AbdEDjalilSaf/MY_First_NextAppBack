@@ -11,6 +11,8 @@ if(!database){
 
 }
 
+console.log("------------------------- database -------------------------",database); 
+
 const databaseId = process.env.NEXT_PUBLIC_DATABASE_ID;
 const collectionId = process.env.NEXT_PUBLIC_COLLECTION_ORDER;
 
@@ -28,7 +30,7 @@ if (!order || !total) {
 
     return NextResponse.json({order,total});
 } catch (error){
-console.error(' --------------------------------------------------------  Error fetching data : ', error);
+// console.error(' --------------------------------------------------------  Error fetching data : ', error);
 return NextResponse.json({error: 'Faild to fetch data'}, {status: 500});
 };
 } 
