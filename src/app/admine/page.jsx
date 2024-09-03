@@ -2,11 +2,30 @@ import axios from "axios";
 
 const  adminePage = async () => {
  
+   try {
     const response = await axios.get('http://localhost:3000/api/order');
-    const orders = await response.data;
-    const {orderData} = orders;
-console.log("----------- response :",response);
-console.log("-----------/s",orderData);
+    const {orders} = response.data; // No need for 'await' here
+
+    console.log("----------- response:", response); // Logs the entire response object
+    console.log("----------- orders:", orders);   // Logs the actual data from the response
+
+    // Check if orders is an array
+    if (Array.isArray(orders)) {
+      console.log("Orders is an array and can be mapped:", orders);
+    } else {
+      console.error("Expected orders to be an array but got:", typeof orders, orders);
+    }
+
+    // return orders; // Return the orders array for further use
+  } catch (error) {
+    console.error("Error fetching orders:", error.message);
+    // return []; // Return an empty array in case of error to avoid breaking the map function
+  }
+
+
+
+// const {orderData} = orders;
+// console.log("---------- // G ",orderData);
     // const data = [
     //     { id: 1, name: "John Doe", email: "john@example.com", role: "Admin" },
     //     { id: 2, name: "Jane Smith", email: "jane@example.com", role: "User" },
