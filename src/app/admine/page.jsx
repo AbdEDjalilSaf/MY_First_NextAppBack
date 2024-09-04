@@ -4,14 +4,21 @@ const  adminePage = async () => {
  
    try {
     const response = await axios.get('http://localhost:3000/api/order');
-    const {orders} = response.data; // No need for 'await' here
+    const orders = response.data; // No need for 'await' here
+    
+    const valuesArray = Object.values(orders);
+    
+
+    // const orderData = Object(orders);
 
     console.log("----------- response:", response); // Logs the entire response object
     console.log("----------- orders:", orders);   // Logs the actual data from the response
+    console.log("----------- valuesArray:", valuesArray);   // Logs the actual data from the response
+
 
     // Check if orders is an array
-    if (Array.isArray(orders)) {
-      console.log("Orders is an array and can be mapped:", orders);
+    if (Array.isArray(valuesArray)) {
+      console.log("Orders is an array and can be mapped:", valuesArray);
     } else {
       console.error("Expected orders to be an array but got:", typeof orders, orders);
     }
@@ -49,18 +56,18 @@ const  adminePage = async () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {orders.map(()=>(
-                    <tr key={user.id} className="border-b">
+                  {valuesArray.map((order)=>(
+                    <tr key={order.id} className="border-b">
                       <td className="px-4 py-2 text-gray-700">{order.id}</td>
                       <td className="px-4 py-2 text-gray-700">
                       <strong>
-                      {order.name}
+                      {order.customer}
                       </strong>
                       </td>
-                      <td className="px-4 py-2 text-gray-700">{order.email}</td>
-                      <td className="px-4 py-2 text-gray-700">{order.role}</td>
+                      <td className="px-4 py-2 text-gray-700">{order.Email}</td>
+                      <td className="px-4 py-2 text-gray-700">{order.Role}</td>
                     </tr>
-                ))} */}
+                ))}
                 </tbody>
               </table>
             </div>
