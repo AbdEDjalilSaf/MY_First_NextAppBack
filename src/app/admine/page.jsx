@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const  adminePage = async () => {
+export default async function adminePage(params) {
  
    try {
     const response = await axios.get('http://localhost:3000/api/order');
@@ -76,4 +76,4 @@ const  adminePage = async () => {
       );
 }
 
-export default adminePage
+
