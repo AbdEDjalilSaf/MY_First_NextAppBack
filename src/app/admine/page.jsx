@@ -56,7 +56,7 @@ const  adminePage = async () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {valuesArray.map((order)=>(
+                  {/* {valuesArray.map((order)=>(
                     <tr key={order.id} className="border-b">
                       <td className="px-4 py-2 text-gray-700">{order.id}</td>
                       <td className="px-4 py-2 text-gray-700">
@@ -67,7 +67,7 @@ const  adminePage = async () => {
                       <td className="px-4 py-2 text-gray-700">{order.Email}</td>
                       <td className="px-4 py-2 text-gray-700">{order.Role}</td>
                     </tr>
-                ))}
+                ))} */}
                 </tbody>
               </table>
             </div>
