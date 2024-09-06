@@ -6,7 +6,7 @@ export default async function adminePage(params) {
     const response = await axios.get('http://localhost:3000/api/order');
     const orders = response.data; // No need for 'await' here
     
-    const valuesArray = Object.values(orders);
+    const valuesArray = Object.values(orders); 
     
 
     // const orderData = Object(orders);
