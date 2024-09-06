@@ -1,4 +1,4 @@
-import  {createAdminClient}  from "@/lib/appwrite.config";
+import  { createAdminClient }  from "@/lib/appwrite.config";
 import { NextResponse } from 'next/server';
 
 

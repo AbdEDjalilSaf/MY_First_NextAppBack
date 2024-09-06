@@ -4,24 +4,24 @@ export default async function adminePage(params) {
  
    try {
     const response = await axios.get('http://localhost:3000/api/order');
-    const orders = response.data; // No need for 'await' here
+    const {orders} = response.data; // No need for 'await' here
     
-    const valuesArray = Object.values(orders); 
+    // const valuesArray = Object.values(orders); 
     
 
     // const orderData = Object(orders);
 
-    console.log("----------- response:", response); // Logs the entire response object
-    console.log("----------- orders:", orders);   // Logs the actual data from the response
-    console.log("----------- valuesArray:", valuesArray);   // Logs the actual data from the response
+    // console.log("----------- response:", response); // Logs the entire response object
+    // console.log("----------- orders:", orders);   // Logs the actual data from the response
+    // console.log("----------- valuesArray:", valuesArray);   // Logs the actual data from the response
 
 
     // Check if orders is an array
-    if (Array.isArray(valuesArray)) {
-      console.log("Orders is an array and can be mapped:", valuesArray);
-    } else {
-      console.error("Expected orders to be an array but got:", typeof orders, orders);
-    }
+    // if (Array.isArray(orders)) {
+    //   console.log("Orders is an array and can be mapped:", orders);
+    // } else {
+    //   console.error("Expected orders to be an array but got:", typeof orders, orders);
+    // }
 
     // return orders; // Return the orders array for further use
   } catch (error) {
@@ -29,17 +29,6 @@ export default async function adminePage(params) {
     // return []; // Return an empty array in case of error to avoid breaking the map function
   }
 
-
-
-// const {orderData} = orders;
-// console.log("---------- // G ",orderData);
-    // const data = [
-    //     { id: 1, name: "John Doe", email: "john@example.com", role: "Admin" },
-    //     { id: 2, name: "Jane Smith", email: "jane@example.com", role: "User" },
-    //     { id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Editor" },
-    //     { id: 4, name: "Alice Brown", email: "alice@example.com", role: "User" },
-    //   ];
-    
 
       return (
         <div className="flex items-center justify-center h-[90vh] bg-gray-100">
@@ -56,7 +45,7 @@ export default async function adminePage(params) {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {valuesArray.map((order)=>(
+                  {orders.map((order)=>(
                     <tr key={order.id} className="border-b">
                       <td className="px-4 py-2 text-gray-700">{order.id}</td>
                       <td className="px-4 py-2 text-gray-700">
@@ -67,7 +56,7 @@ export default async function adminePage(params) {
                       <td className="px-4 py-2 text-gray-700">{order.Email}</td>
                       <td className="px-4 py-2 text-gray-700">{order.Role}</td>
                     </tr>
-                ))} */}
+                ))}
                 </tbody>
               </table>
             </div>
