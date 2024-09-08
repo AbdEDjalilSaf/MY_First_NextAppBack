@@ -7,16 +7,14 @@ export default async function adminePage(params) {
     const  orders  = response.data; // No need for 'await' here
 
     const valuesArray = Object.values(orders); 
-    console.log("----------- orders:", orders);
-
-    const iterator = valuesArray.values();
+    // console.log("----------- orders:", orders);
 
     // const orderData = Object(orders);
 
     // console.log("----------- response:", response); // Logs the entire response object
-    console.log("----------- valuesArray:", valuesArray);   // Logs the actual data from the response
-    //    // Logs the actual data from the response
-    console.log("----------- iterator:", typeof iterator,"---", iterator);
+    // console.log("----------- valuesArray:", valuesArray);   // Logs the actual data from the response
+    // //    // Logs the actual data from the response
+    // console.log("----------- iterator:", typeof iterator,"---", iterator);
 
     // Check if orders is an array
     // if (Array.isArray(orders)) {
