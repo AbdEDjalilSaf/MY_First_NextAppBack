@@ -20,7 +20,7 @@ return {
 };
 
 // create session
-const createSessionClient = async ()=>{
+const createSessionClient = async (session)=>{
 
     const client = new Client();
 
@@ -28,10 +28,10 @@ const createSessionClient = async ()=>{
         .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
         .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
 
-const session = cookies.get("custom_session");
+// const session = cookies.get("custom_session");
 if(session){
 
-    client.setSession(session.value);
+    client.setSession(session);
 
 }
 
@@ -42,7 +42,7 @@ return {
 }
 }
 
-export  {createAdminClient,createSessionClient}
+export  { createAdminClient, createSessionClient }
 
 
 

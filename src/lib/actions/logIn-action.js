@@ -6,9 +6,13 @@ import { ID } from "node-appwrite"
 
 
 const SignInWithEmail = async (formData) => {
-  
-const email = formData.get("email"); 
-const password = formData.get("password"); 
+    
+    "use server"
+
+    console.log(formData);
+
+// const email = formData.get("email"); 
+// const password = formData.get("password"); 
 
 // if (email === null) {
 //     throw new Error("Email is required");
@@ -18,7 +22,10 @@ const password = formData.get("password");
 //     throw new Error("Password is required");
 // }
 
-const {account} =  createAdminClient();
+// const {account} =  createAdminClient();
+
+
+
 
 // try {
 //     const {account} = await createAdminClient();
@@ -31,23 +38,23 @@ const {account} =  createAdminClient();
 
 console.log("You not soooo earlyyyyyyyyyyyyyyyyyyy");
 
-const session = await account.createEmailPasswordSession(
-    email,
-    password
-);
+// const session = await account.createEmailPasswordSession(
+//     email,
+//     password
+// );
 
 console.log("will log innnnnnnnnnnnnnnnnnnnnnn");
 
-cookies().set(custom_session, session.secret, {
-    path: "/",
-    httpOnly: true,
-    sameSite: "strict",
-    secure: true
-});
+// cookies().set(custom_session, session.secret, {
+//     path: "/",
+//     httpOnly: true,
+//     sameSite: "strict",
+//     secure: true
+// });
 
 console.log("log Innnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
 
-redirect("/");
+// redirect("/");
 
 }
 

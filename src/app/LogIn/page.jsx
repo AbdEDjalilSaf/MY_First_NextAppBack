@@ -2,6 +2,8 @@ import RegisterLogIn from "@/components/forms/registerLogIn"
 
 
 const Login = () => {
+
+
   return (
     <>
       <RegisterLogIn />
