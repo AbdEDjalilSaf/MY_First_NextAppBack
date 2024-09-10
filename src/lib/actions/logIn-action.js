@@ -27,12 +27,12 @@ try {
     const {account} = await createAdminClient();
     const user = await account.createEmailPasswordSession(email,password);
 
-    cookies().set(custom_session, user.secret, {
+    cookies().set('custom_session', user.secret, {
     path: "/",
     httpOnly: true,
     sameSite: "strict",
     secure: true
-});
+}); 
 
     // return user;
 } catch (error) {

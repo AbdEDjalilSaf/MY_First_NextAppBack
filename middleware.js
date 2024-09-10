@@ -6,26 +6,16 @@ import { redirect } from "next/dist/server/api-utils";
 
 export async function middleware(requist) {
 
-const user = requist.cookies.get("custom_session");
+const user = false;
 
 if(!user){
-   return NextResponse.redirect(new URL('/Login', requist.url));
-    
+   const response = NextResponse.redirect(new URL('/login', requist.url));
+    return response;
 }
 
 return NextResponse.next();
 
 }
-
-
-
-
-
-
-
-
-
-
 
 export const config = {
     matcher: ['/'],
