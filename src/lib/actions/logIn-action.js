@@ -9,32 +9,35 @@ const SignInWithEmail = async (formData) => {
     
     "use server"
 
-    console.log(formData);
 
-// const email = formData.get("email"); 
-// const password = formData.get("password"); 
+const email = formData.get("email"); 
+const password = formData.get("password"); 
 
-// if (email === null) {
-//     throw new Error("Email is required");
-// }
+if (email === null) {
+    throw new Error("Email is required");
+}
 
-// if (password === null) {
-//     throw new Error("Password is required");
-// }
+if (password === null) {
+    throw new Error("Password is required");
+}
 
 // const {account} =  createAdminClient();
 
 
 
 
-// try {
-//     const {account} = await createAdminClient();
-//     const user = await account.createEmailPasswordSession(email,password);
 
-//     return user;
-// } catch (error) {
-//     console.log(error);
-// }
+try {
+    const {account} = await createAdminClient();
+    const user = await account.createEmailPasswordSession(email,password);
+
+    return user;
+} catch (error) {
+    console.log(error);
+}
+
+
+
 
 console.log("You not soooo earlyyyyyyyyyyyyyyyyyyy");
 
