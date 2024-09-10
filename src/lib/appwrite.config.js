@@ -39,6 +39,7 @@ return {
     get account(){
         return new Account(client);
     }
+    
 }
 }
 

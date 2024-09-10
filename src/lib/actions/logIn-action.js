@@ -7,8 +7,6 @@ import { ID } from "node-appwrite"
 
 const SignInWithEmail = async (formData) => {
     
-    "use server"
-
 
 const email = formData.get("email"); 
 const password = formData.get("password"); 
@@ -21,8 +19,6 @@ if (password === null) {
     throw new Error("Password is required");
 }
 
-// const {account} =  createAdminClient();
-
 
 
 
@@ -31,7 +27,14 @@ try {
     const {account} = await createAdminClient();
     const user = await account.createEmailPasswordSession(email,password);
 
-    return user;
+    cookies().set(custom_session, user.secret, {
+    path: "/",
+    httpOnly: true,
+    sameSite: "strict",
+    secure: true
+});
+
+    // return user;
 } catch (error) {
     console.log(error);
 }
