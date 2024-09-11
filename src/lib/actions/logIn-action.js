@@ -31,9 +31,10 @@ try {
     path: "/",
     httpOnly: true,
     sameSite: "strict",
+    expires: new Date(user.expire),
     secure: true
-}); 
-
+});  
+redirect("/");
     // return user;
 } catch (error) {
     console.log(error);

@@ -32,7 +32,7 @@ const createSessionClient = async (session)=>{
 if(session){
 
     client.setSession(session);
-
+    
 }
 
 return {

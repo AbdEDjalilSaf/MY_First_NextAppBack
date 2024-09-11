@@ -17,6 +17,6 @@ const { documents: order, total} = await databases.listDocuments(
     return NextResponse.json({order,total});
 } catch (error){
 console.error(' ----------------------------------------------  Error fetching data : ', error);
-return NextResponse.json({error: 'Faild to fetch data'}, {status: 500});
+return NextResponse.json({error: 'Faild to fetch data'});
 };
 } 
