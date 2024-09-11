@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { createSessionClient } from "@/lib/appwrite.config"
 import { redirect } from "next/dist/server/api-utils";
-
+import { getUser } from "@/auth"
 
 
 export async function middleware(requist) {
