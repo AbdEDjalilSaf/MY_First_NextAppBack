@@ -13,7 +13,7 @@ const password = formData.get("password");
 
 if (email === null) {
     throw new Error("Email is required");
-}
+} 
 
 if (password === null) {
     throw new Error("Password is required");
