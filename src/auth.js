@@ -8,9 +8,10 @@ const auth = {
  
     getUser: async () => {
   auth.sessionCookies = cookies().get("custom_session");
-
+console.log("----------------     ---------------------",auth.sessionCookies);
 try {
     const { account } = await createSessionClient(auth.sessionCookies.value);
+    console.log("your reel --------- : ");
     auth.user = account.get();
 
 }catch(error){
