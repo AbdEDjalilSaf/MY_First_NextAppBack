@@ -26,7 +26,8 @@ if (password === null) {
 try {
     const {account} = await createAdminClient();
     const user = await account.createEmailPasswordSession(email,password);
-
+    
+    console.log("yes");
     cookies().set('custom_session', user.secret, {
     path: "/",
     httpOnly: true,
@@ -34,6 +35,8 @@ try {
     expires: new Date(user.expire),
     secure: true
 });  
+
+console.log("yes");
 redirect("/");
     // return user;
 } catch (error) {

@@ -1,16 +1,17 @@
 import { NextResponse } from "next/server";
 import { createSessionClient } from "@/lib/appwrite.config"
 import { redirect } from "next/dist/server/api-utils";
-import { getUser } from "@/auth"
+import  auth  from "@/auth"
 
 
 export async function middleware(requist) {
 
 // const user = requist.cookies.get("custom_session");
-const user = false;
+const user = await auth.getUser();
 
 
 if(!user){
+    requist.cookies.delete("custom_session");
    return NextResponse.redirect(new URL('/Login', requist.url));
     
 }
