@@ -1,7 +1,7 @@
 
 // pages/login.js
 import { Button } from "../ui/button";
-import { SignInWithEmail } from "@/lib/actions/logIn-action";
+import  {SignInWithEmail}  from "@/lib/actions/logIn-action";
 
 
 

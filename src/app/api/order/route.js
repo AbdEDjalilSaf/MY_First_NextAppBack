@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 export async function GET() {
 
 const sessionCookies = cookies().get("custom_session");
- 
+ console.log(" ------------------ route -------------------",sessionCookies);
     try {
 const {databases} = await createSessionClient(sessionCookies.value);
 

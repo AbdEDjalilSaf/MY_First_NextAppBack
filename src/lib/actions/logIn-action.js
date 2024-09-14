@@ -21,14 +21,14 @@ if (password === null) {
 
 
 
+console.log("-========================= wait");
 
+const {account} = await createAdminClient();
+console.log(" ------------ is Account ---------------", account);
 
 try {
-    const {account} = await createAdminClient();
     const user = await account.createEmailPasswordSession(email,password);
-    
-    console.log("-=========================yes");
-    cookies().set('custom_session', user.secret, {
+        cookies().set("custom_session", user.secret, {
     path: "/",
     httpOnly: true,
     sameSite: "strict",
@@ -36,24 +36,23 @@ try {
     secure: true
 });  
 
-console.log(" ----------------------------yes");
-redirect("/");
+console.log(" ---------------------------- return --------",cookies().get("custom_session"));
+redirect("/Team");
     // return user;
 } catch (error) {
     console.log(error);
+    console.log("+++++++++++ +++++ look here");
 }
 
 
 
 
-console.log("You not soooo earlyyyyyyyyyyyyyyyyyyy");
 
 // const session = await account.createEmailPasswordSession(
 //     email,
 //     password
 // );
 
-console.log("will log innnnnnnnnnnnnnnnnnnnnnn");
 
 // cookies().set(custom_session, session.secret, {
 //     path: "/",
@@ -62,7 +61,6 @@ console.log("will log innnnnnnnnnnnnnnnnnnnnnn");
 //     secure: true
 // });
 
-console.log("log Innnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
 
 // redirect("/");
 
