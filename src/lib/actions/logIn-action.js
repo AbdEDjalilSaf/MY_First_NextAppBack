@@ -19,22 +19,26 @@ if (password === null) {
     throw new Error("Password is required");
 }
 
+console.log("email",email);
+console.log("password",password);
+
 
 
 console.log("-========================= wait");
 
 const {account} = await createAdminClient();
-console.log(" ------------ is Account ---------------", account);
+// console.log(" ------------ is Account ---------------", account);
+
 
 try {
-    const user = await account.createEmailPasswordSession(email,password);
-        cookies().set("custom_session", user.secret, {
-    path: "/",
-    httpOnly: true,
-    sameSite: "strict",
-    expires: new Date(user.expire),
-    secure: true
-});  
+    const user =  account.createEmailPasswordSession(email,password);
+    cookies().set("custom_session", user.secret, {
+        path: "/",
+        httpOnly: true,
+        sameSite: 'strict',
+        expires: new Date(user.expire),
+        secure: true
+        });  
 
 console.log(" ---------------------------- return --------",cookies().get("custom_session"));
 redirect("/Team");
