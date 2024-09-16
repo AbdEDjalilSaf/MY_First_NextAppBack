@@ -11,7 +11,7 @@ const user = await auth.getUser();
 
 
 if(!user){
-    // requist.cookies.delete("custom_session");
+    requist.cookies.delete("custom_session");
    return NextResponse.redirect(new URL('/Login', requist.url));
     
 }

@@ -3,11 +3,11 @@ import { NextResponse } from 'next/server';
 import { cookies } from "next/headers";
 
 export async function GET() {
-
+  
 const sessionCookies = cookies().get("custom_session");
  console.log(" ------------------ route -------------------",sessionCookies);  
     try {
-const {databases} = await createSessionClient(sessionCookies.value);
+const {databases} = await createSessionClient(sessionCookies);
 
 const { documents: order, total} = await databases.listDocuments(
     process.env.NEXT_PUBLIC_DATABASE_ID,

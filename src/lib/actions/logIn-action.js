@@ -41,7 +41,7 @@ try {
         });  
 
 console.log(" ---------------------------- return --------",cookies().get("custom_session"));
-redirect("/Team");
+redirect("/");
     // return user;
 } catch (error) {
     console.log(error);
