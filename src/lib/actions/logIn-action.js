@@ -30,8 +30,10 @@ const {account} = await createAdminClient();
 // console.log(" ------------ is Account ---------------", account);
 
 
-try {
     const user =  account.createEmailPasswordSession(email,password);
+
+console.log("--------------- user ----------------", user);
+
     cookies().set("custom_session", user.secret, {
         path: "/",
         httpOnly: true,
@@ -41,6 +43,18 @@ try {
         });  
 
 console.log(" ---------------------------- return --------",cookies().get("custom_session"));
+
+try {
+    // const user =  account.createEmailPasswordSession(email,password);
+    // cookies().set("custom_session", user.secret, {
+    //     path: "/",
+    //     httpOnly: true,
+    //     sameSite: 'strict',
+    //     expires: new Date(user.expire),
+    //     secure: true
+    //     });  
+
+// console.log(" ---------------------------- return --------",cookies().get("custom_session"));
 redirect("/");
     // return user;
 } catch (error) {

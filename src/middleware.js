@@ -9,6 +9,7 @@ export async function middleware(requist) {
 // const user = requist.cookies.get("custom_session");
 const user = await auth.getUser();
 
+console.log("---------- middleware ----------",user);
 
 if(!user){
     requist.cookies.delete("custom_session");

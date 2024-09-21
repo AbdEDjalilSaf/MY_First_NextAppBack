@@ -12,11 +12,13 @@ const auth = {
 console.log("----------------     ---------------------",auth.sessionCookies);
 
 try {
-    const { account } = await createSessionClient(auth.sessionCookies.value);
-
+    const { account } = await createSessionClient(auth.sessionCookies.value); // back
+    console.log("----------------   createSessionClient  ---------------------",account);
     console.log("your reel --------- : ");
 
     auth.user = account.get();
+
+    console.log("your end --------- : ",auth.user);
 
 }catch(error){
 
