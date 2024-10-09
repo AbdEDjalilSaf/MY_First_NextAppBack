@@ -3,12 +3,12 @@ import axios from "axios";
 export default async function adminePage(params) {
  
   //  try {
-    // const response = await axios.get('http://localhost:3000/api/order');
-    // const  orders  = response.data; // No need for 'await' here
+    const response = await axios.get('http://localhost:3000/api/order');
+    const  orders  = response.data; // No need for 'await' here
 
-    // const valuesArray = Object.values(orders); 
+    const valuesArray = Object.values(orders); 
 
-    const valuesArray = [];
+    // const valuesArray = [];
     // console.log("----------- orders:", orders);
 
     // const orderData = Object(orders);

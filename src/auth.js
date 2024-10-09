@@ -5,14 +5,13 @@ const auth = {
     user:null,
     sessionCookies:null,
 
- 
     getUser: async () => {
   auth.sessionCookies = cookies().get("custom_session");
 
 console.log("----------------     ---------------------",auth.sessionCookies);
+const { account } = await createSessionClient(auth.sessionCookies); // back value
 
 try {
-    const { account } = await createSessionClient(auth.sessionCookies.value); // back
     console.log("----------------   createSessionClient  ---------------------",account);
     console.log("your reel --------- : ");
 

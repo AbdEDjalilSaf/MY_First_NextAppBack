@@ -1,3 +1,4 @@
+"use server";
 import { cookies } from 'next/headers';
 import {Account, Client, Databases} from 'node-appwrite'
 
@@ -20,7 +21,7 @@ return {
 };
 
 // create session
-const createSessionClient = async (session)=>{
+const createSessionClient = async ()=>{
 
     const client = new Client();
 
@@ -28,12 +29,14 @@ const createSessionClient = async (session)=>{
         .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
         .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
 
-// const session = cookies.get("custom_session");
-if(session){
-
-    client.setSession(session);
-    
+const session = cookies().get("custom_session");
+if(!session){
+    // throw new Error("No session");
+    console.log("no Session");
 }
+
+// client.setSession(session.value);
+client.setSession(session);
 
 return {
     get account(){
