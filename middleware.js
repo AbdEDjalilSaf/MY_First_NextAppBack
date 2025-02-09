@@ -6,7 +6,7 @@ import { redirect } from "next/dist/server/api-utils";
 
 export async function middleware(requist) {
 
-const user = false;
+const user = auth.get();
 
 if(!user){
    const response = NextResponse.redirect(new URL('/login', requist.url));
